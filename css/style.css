@@ -1,0 +1,25 @@
+.movie_display {
+    background-color: blue;
+    
+}
+
+.movieStyle {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgStyle {
+    height:150px;
+    width:100px;
+}
+
+.buttonStyle {
+    border:none;
+    background-color: transparent;
+}
+
+h2 {
+    font-family: cursive;
+    margin-bottom: 30px;
+}
