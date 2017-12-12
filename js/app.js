@@ -22,8 +22,21 @@ $('#movieHolderBox').on('click','button',function(){
     $('#movieDisplayBox').html('')
     let link = `http://www.omdbapi.com/?i=${this.value}&apikey=48f53faf`
     console.log(link)
+    
     $.get(link,function(movies){
+        rating = movies.Rated + " "
+        plot = movies.Plot
+        release = movies.Released + " "
+        
+        let bigPictureHolder = $('<div>')
+        let info = $('<p>')
+        info.append(rating,release,plot)
+        let bigImage = $('<img>')
+        bigImage.attr("src",movies.Poster).addClass("bigImgStyle")
+        bigPictureHolder.append(bigImage)
+        $('#movieDisplayBox').append(bigPictureHolder,info)
         console.log(movies.Title)
+        console.log(movies.Rated)
     })
           
 

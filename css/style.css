@@ -1,5 +1,5 @@
 .movie_display {
-    background-color: blue;
+    background-color: cornsilk;
     
 }
 
@@ -22,4 +22,8 @@
 h2 {
     font-family: cursive;
     margin-bottom: 30px;
+}
+
+p{
+   margin:20px; 
 }
