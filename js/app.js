@@ -28,9 +28,10 @@ $('#movieHolderBox').on('click','button',function(){
         let plot = `<p><strong>Plot:</strong>  ${movies.Plot} </p>`
         let release = `<p><strong>Released on:</strong>  ${movies.Released} </p>`    
         let bigPictureHolder = $('<div>')
+        let title = `<h2>${movies.Title}</h2>`
         let bigImage = $('<img>')
         bigImage.attr("src",movies.Poster).addClass("bigImgStyle")
-        bigPictureHolder.append(bigImage)
+        bigPictureHolder.append(title,bigImage)
         $('#movieDisplayBox').append(bigPictureHolder)
         $('#dataDisplayBox').append(rating,release,plot)
     })
