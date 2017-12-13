@@ -1,12 +1,14 @@
 .movie_display {
-    background-color: cornsilk;
-    
+    border:none;
+    display:flex;
 }
 
 .movieStyle {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    margin:5px;
 }
 
 .imgStyle {
@@ -17,6 +19,8 @@
 .buttonStyle {
     border:none;
     background-color: transparent;
+    font-size: 15px;
+    width:40px;
 }
 
 h2 {

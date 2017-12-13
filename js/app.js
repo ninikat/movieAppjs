@@ -20,23 +20,19 @@ $.get(moviesUrl,function(movies){
 
 $('#movieHolderBox').on('click','button',function(){
     $('#movieDisplayBox').html('')
+    $('#dataDisplayBox').html('')
     let link = `http://www.omdbapi.com/?i=${this.value}&apikey=48f53faf`
-    console.log(link)
     
     $.get(link,function(movies){
-        rating = movies.Rated + " "
-        plot = movies.Plot
-        release = movies.Released + " "
-        
+        let rating = `<p><strong>Rated:</strong>  ${movies.Rated} </p>`
+        let plot = `<p><strong>Plot:</strong>  ${movies.Plot} </p>`
+        let release = `<p><strong>Released on:</strong>  ${movies.Released} </p>`    
         let bigPictureHolder = $('<div>')
-        let info = $('<p>')
-        info.append(rating,release,plot)
         let bigImage = $('<img>')
         bigImage.attr("src",movies.Poster).addClass("bigImgStyle")
         bigPictureHolder.append(bigImage)
-        $('#movieDisplayBox').append(bigPictureHolder,info)
-        console.log(movies.Title)
-        console.log(movies.Rated)
+        $('#movieDisplayBox').append(bigPictureHolder)
+        $('#dataDisplayBox').append(rating,release,plot)
     })
           
 
@@ -44,63 +40,3 @@ $('#movieHolderBox').on('click','button',function(){
 })
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//THIS WORKS
-
-/*
-  $.get(moviesUrl,function(movies){   
-     $(movies.Search).each(function(index,movie){
-         
-         if (clickedMovie.html()=== movie.Title){
-             console.log(movie.Title)
-             let bigPictureHolder = $('<div>')
-             let bigImage = $('<img>')
-             bigImage.attr("src",movie.Poster).addClass("bigImgStyle")
-             bigPictureHolder.append(bigImage)
-             $('#movieDisplayBox').append(bigPictureHolder)
-             
-         } 
-         }
-     )})
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-// everything here
-//movie.Year, movie.imdbID, movie.Poster
-//  $(movies.Search).each(function(index,movie){
-//        let box = $('<div>')
-//        let li = $('<li>')
-//        let img = $('<img>')
-//        img.attr("src",movie.Poster).addClass("imgStyle")
-//        li.html(movie.Title).addClass("movieStyle")
-//        box.addClass("holder").append(img,li)
-//        $('#movieList').append(box)
-//    })
-//    
-
